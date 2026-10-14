@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-coral: #FF385C;
+  --color-coral-dark: #E61E4D;
+  --color-teal: #0D5C63;
+  --color-teal-mid: #1A7A83;
+  --color-teal-light: #E8F4F5;
+  --color-sand: #FDF6EE;
+  --color-text: #1a1a1a;
+  --color-muted: #717171;
+  --color-border: #e8e8e8;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    background-color: #ffffff;
+  }
+  body {
+    font-family: var(--font-ui);
+    background-color: #ffffff;
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1 {
+    font-family: var(--font-display);
+  }
+}
+
+/* ── Typography utilities ── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ── Color utilities ── */
+.text-teal { color: var(--color-teal); }
+.bg-teal-light { background-color: var(--color-teal-light); }
+.border-teal { border-color: var(--color-teal); }
+.bg-sand { background-color: var(--color-sand); }
+
+/* ────────────────────────────────────────────
+   Scroll-reveal system
+   One clean orchestrated entrance per section.
+   Uses IntersectionObserver via data-reveal attr.
+   Respects prefers-reduced-motion.
+──────────────────────────────────────────── */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Sections start invisible and animate in when .is-visible is added by JS */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-section.is-visible {
+  animation: reveal-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-fade {
+  opacity: 0;
+}
+.reveal-fade.is-visible {
+  animation: reveal-fade 0.5s ease both;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-16px);
+}
+.reveal-left.is-visible {
+  animation: reveal-left 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger children inside a reveal container */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 60ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 120ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 180ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 240ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 300ms; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-fade,
+  .reveal-left,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   Micro-interactions
+──────────────────────────────────────────── */
+
+/* Gallery image hover — handled in component via Tailwind */
+
+/* CTA button gentle pulse on load (one-shot, signals affordance) */
+@keyframes cta-attention {
+  0%   { box-shadow: 0 0 0 0 rgba(230, 30, 77, 0.35); }
+  60%  { box-shadow: 0 0 0 12px rgba(230, 30, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 30, 77, 0); }
+}
+
+.cta-pulse {
+  animation: cta-attention 1.6s ease-out 1s 1 forwards;
+}
+
+/* Heart fill animation */
+@keyframes heart-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.3); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1.1); }
+}
+.heart-pop {
+  animation: heart-pop 0.35s ease-out forwards;
+}
+
+/* Booking card price counter */
+@keyframes number-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.number-in {
+  animation: number-in 0.3s ease-out both;
+}
+
+/* ────────────────────────────────────────────
+   Scrollbar
+──────────────────────────────────────────── */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* ────────────────────────────────────────────
+   Highlight strip accent
+──────────────────────────────────────────── */
+.highlight-strip {
+  border-left: 3px solid var(--color-teal);
+  padding-left: 1.25rem;
+  transition: border-color 0.2s ease;
+}
+.highlight-strip:hover {
+  border-color: var(--color-coral);
+}
+
+/* ────────────────────────────────────────────
+   Booking card date pills
+──────────────────────────────────────────── */
+.date-pill {
+  background: var(--color-teal-light);
+  border: 1.5px solid rgba(13, 92, 99, 0.2);
+  border-radius: 12px;
+  padding: 8px 14px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.date-pill:hover {
+  background: #d4eaec;
+  border-color: var(--color-teal);
+}
+.date-pill-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-teal);
+  text-transform: uppercase;
+}
+.date-pill-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 2px;
+}

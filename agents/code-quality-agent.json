@@ -1,0 +1,12 @@
+{
+  "name": "code-quality-agent",
+  "version": "1.0.0",
+  "description": "Validates TypeScript typing, accessibility (WCAG 2.1 AA), keyboard event trap, and responsive container structure.",
+  "tools": ["tsc", "eslint", "browser_subagent"],
+  "rules": [
+    "Ensure zero TypeScript diagnostics on tsc --noEmit",
+    "Verify keyboard handlers for Escape, ArrowLeft, ArrowRight on overlays",
+    "Ensure document.body.style.overflow locking on modal mount/unmount",
+    "Check all interactive elements have accessible aria labels"
+  ]
+}

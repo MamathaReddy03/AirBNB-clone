@@ -1,0 +1,12 @@
+{
+  "name": "architecture-agent",
+  "version": "1.0.0",
+  "description": "Reviews distributed system design, high-concurrency calendar availability (Redis bitmaps), distributed locking (Redlock), and geospatial search strategy.",
+  "tools": ["system_diagram_generator", "markdown_validator"],
+  "rules": [
+    "Verify sub-millisecond bitfield calendar availability model",
+    "Ensure zero double-booking distributed saga transactions with Redlock TTL",
+    "Audit Kafka CDC streaming pipeline into Elasticsearch geo_point clusters",
+    "Ensure complete coverage of Frontend, Backend, Storage, Search, and Deployment tiers"
+  ]
+}

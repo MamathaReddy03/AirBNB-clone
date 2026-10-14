@@ -1,0 +1,12 @@
+{
+  "name": "visual-fidelity-agent",
+  "version": "1.0.0",
+  "description": "Inspects and enforces Airbnb design tokens, pixel parity across listing page, photo tour overlay, and lightbox viewer.",
+  "tools": ["browser_subagent", "generate_image"],
+  "rules": [
+    "Verify primary Rausch accent #FF385C matches authentic Airbnb brand",
+    "Inspect 5-photo hero collage border radius (16px) and hover zoom scale (1.05)",
+    "Verify category filter pills in Photo Tour with accurate photo counts",
+    "Ensure smooth framer-motion cross-fading and thumbnail carousel synchronization in Lightbox"
+  ]
+}

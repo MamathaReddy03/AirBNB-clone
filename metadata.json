@@ -1,0 +1,6 @@
+{
+  "name": "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10",
+  "description": "Pixel-perfect clone of Airbnb listing page with full property details, interactive reservation engine, photo tour gallery, and lightbox viewer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

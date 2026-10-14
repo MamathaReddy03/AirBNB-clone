@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="primaryAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF385C" />
+      <stop offset="100%" stop-color="#E00B41" />
+    </linearGradient>
+
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <linearGradient id="amberAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EF4444" />
+    </linearGradient>
+
+    <linearGradient id="emeraldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="purpleAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#94A3B8" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#FF385C" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 26px; font-weight: 800; fill: #FFFFFF; }
+    .subtitle { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #94A3B8; }
+    .section-label { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; fill: #64748B; }
+    .card-title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #F8FAFC; }
+    .card-tech { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; fill: #38BDF8; }
+    .card-body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 400; fill: #CBD5E1; line-height: 1.4; }
+    .badge { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; }
+    .conn-line { stroke: #334155; stroke-width: 2; stroke-dasharray: 4 4; fill: none; }
+    .conn-solid { stroke: #475569; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bgGradient)" />
+
+  <!-- Grid Dots Background Pattern -->
+  <pattern id="gridDots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#1E293B" opacity="0.6" />
+  </pattern>
+  <rect width="1400" height="900" fill="url(#gridDots)" />
+
+  <!-- HEADER -->
+  <g transform="translate(60, 45)">
+    <!-- Airbnb Symbol / Icon -->
+    <rect x="0" y="0" width="44" height="44" rx="12" fill="url(#primaryAccent)" />
+    <path d="M 22 8 C 24.5 8 26.5 9.5 28 12 C 30 15.5 32 24 32.5 26 C 33 28 31 32 27 32 C 24 32 23 30.5 22 28 C 21 30.5 20 32 17 32 C 13 32 11 28 11.5 26 C 12 24 14 15.5 16 12 C 17.5 9.5 19.5 8 22 8 Z M 22 18 C 20.3 18 19 19.3 19 21 C 19 22.7 20.3 24 22 24 C 23.7 24 25 22.7 25 21 C 25 19.3 23.7 18 22 18 Z" fill="#FFFFFF" transform="scale(0.8) translate(3, 4)" />
+
+    <text x="60" y="24" class="title">Vacation-Rental Marketplace System Architecture</text>
+    <text x="60" y="44" class="subtitle">Production-Scale Distributed Topology (150M+ MAU · 100K+ QPS · Sub-100ms Search · Zero Double-Booking)</text>
+  </g>
+
+  <!-- ==================== LAYER 1: CLIENTS & GLOBAL EDGE ==================== -->
+  <text x="60" y="125" class="section-label">Layer 1: Global Clients &amp; Edge Delivery</text>
+
+  <!-- Client Devices Card -->
+  <g transform="translate(60, 140)">
+    <rect width="280" height="85" rx="12" fill="url(#cardEdge)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="16" y="16" width="32" height="32" rx="8" fill="#3B82F6" fill-opacity="0.2" />
+    <text x="24" y="37" font-size="18">📱</text>
+    <text x="60" y="32" class="card-title">Global Clients</text>
+    <text x="60" y="48" class="card-tech">Next.js Web / iOS &amp; Android</text>
+    <text x="60" y="68" class="card-body">SSR / ISR Listing Pages + Client Hydration</text>
+  </g>
+
+  <!-- Cloudflare Edge & CDN Card -->
+  <g transform="translate(400, 140)">
+    <rect width="440" height="85" rx="12" fill="url(#cardEdge)" stroke="#F59E0B" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="16" y="16" width="32" height="32" rx="8" fill="#F59E0B" fill-opacity="0.2" />
+    <text x="24" y="37" font-size="18">⚡</text>
+    <text x="60" y="32" class="card-title">Cloudflare Anycast CDN &amp; Security Shield</text>
+    <text x="60" y="48" class="card-tech">Edge Caching · WAF DDoS Mitigation · WebP Image Pipeline</text>
+    <text x="60" y="68" class="card-body">Static listing ISR caches at 280+ edge locations &lt; 20ms</text>
+  </g>
+
+  <!-- Envoy API Gateway Card -->
+  <g transform="translate(900, 140)">
+    <rect width="440" height="85" rx="12" fill="url(#cardEdge)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="16" y="16" width="32" height="32" rx="8" fill="#8B5CF6" fill-opacity="0.2" />
+    <text x="24" y="37" font-size="18">🛡️</text>
+    <text x="60" y="32" class="card-title">Envoy API Gateway &amp; GraphQL Federation</text>
+    <text x="60" y="48" class="card-tech">JWT Auth · Dynamic Rate Limiting · Supergraph Mesh</text>
+    <text x="60" y="68" class="card-body">Federates domain subgraphs &amp; terminates TLS 1.3</text>
+  </g>
+
+  <!-- Connectors Layer 1 -> Layer 2 -->
+  <path d="M 340 182 L 400 182" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 840 182 L 900 182" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 1120 225 L 1120 270" class="conn-solid" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 2: MICROSERVICES DOMAIN TIER ==================== -->
+  <text x="60" y="275" class="section-label">Layer 2: Core Domain Microservices (gRPC / Kubernetes Pods)</text>
+
+  <!-- Service 1: Listing Catalog -->
+  <g transform="translate(60, 290)">
+    <rect width="235" height="150" rx="12" fill="url(#cardEdge)" stroke="#3B82F6" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#3B82F6" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🏡</text>
+    <text x="50" y="30" class="card-title">Listing Catalog</text>
+    <text x="50" y="44" class="card-tech">Go / gRPC</text>
+    <text x="14" y="70" class="card-body">• Property schema &amp; amenities</text>
+    <text x="14" y="88" class="card-body">• High-res photo metadata</text>
+    <text x="14" y="106" class="card-body">• House rules &amp; host profiles</text>
+    <text x="14" y="124" class="card-body">• Multi-lingual localization</text>
+  </g>
+
+  <!-- Service 2: Availability & Pricing Engine -->
+  <g transform="translate(325, 290)">
+    <rect width="235" height="150" rx="12" fill="url(#cardEdge)" stroke="#10B981" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#10B981" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">📅</text>
+    <text x="50" y="30" class="card-title">Availability &amp; Pricing</text>
+    <text x="50" y="44" class="card-tech">Rust / Redis Bitfield Engine</text>
+    <text x="14" y="70" class="card-body">• 365-bit calendar bitmaps</text>
+    <text x="14" y="88" class="card-body">• Dynamic surge &amp; seasonal rules</text>
+    <text x="14" y="106" class="card-body">• Sub-millisecond range checking</text>
+    <text x="14" y="124" class="card-body">• Instant price breakdown</text>
+  </g>
+
+  <!-- Service 3: Booking & Saga Orchestrator -->
+  <g transform="translate(590, 290)">
+    <rect width="235" height="150" rx="12" fill="url(#cardEdge)" stroke="#FF385C" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#FF385C" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🔒</text>
+    <text x="50" y="30" class="card-title">Booking Saga Engine</text>
+    <text x="50" y="44" class="card-tech">Java / Temporal Saga Workflow</text>
+    <text x="14" y="70" class="card-body">• Redlock 15-min reservation hold</text>
+    <text x="14" y="88" class="card-body">• Two-phase payment commit</text>
+    <text x="14" y="106" class="card-body">• Zero double-booking guarantee</text>
+    <text x="14" y="124" class="card-body">• Automated rollback &amp; release</text>
+  </g>
+
+  <!-- Service 4: Search & Geo-Spatial Discovery -->
+  <g transform="translate(855, 290)">
+    <rect width="235" height="150" rx="12" fill="url(#cardEdge)" stroke="#06B6D4" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#06B6D4" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🔍</text>
+    <text x="50" y="30" class="card-title">Search &amp; Discovery</text>
+    <text x="50" y="44" class="card-tech">Elasticsearch / Uber H3 Index</text>
+    <text x="14" y="70" class="card-body">• Map bounding-box queries</text>
+    <text x="14" y="88" class="card-body">• H3 hexagonal spatial indexing</text>
+    <text x="14" y="106" class="card-body">• Personalized ranking ML</text>
+    <text x="14" y="124" class="card-body">• Filter by Jacuzzi, beds, pool</text>
+  </g>
+
+  <!-- Service 5: Reviews & User Reputation -->
+  <g transform="translate(1120, 290)">
+    <rect width="220" height="150" rx="12" fill="url(#cardEdge)" stroke="#F59E0B" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#F59E0B" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">⭐</text>
+    <text x="50" y="30" class="card-title">Reviews &amp; Trust</text>
+    <text x="50" y="44" class="card-tech">Node.js / DynamoDB</text>
+    <text x="14" y="70" class="card-body">• Verified guest feedback</text>
+    <text x="14" y="88" class="card-body">• 6 rating category averages</text>
+    <text x="14" y="106" class="card-body">• Superhost badge calculation</text>
+    <text x="14" y="124" class="card-body">• Anti-fraud sentiment analysis</text>
+  </g>
+
+  <!-- ==================== LAYER 3: EVENT STREAMING (KAFKA) ==================== -->
+  <g transform="translate(60, 480)">
+    <rect width="1280" height="60" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.5" />
+    <text x="24" y="36" font-size="18">📨</text>
+    <text x="56" y="36" class="card-title">Apache Kafka Distributed Event Streaming Mesh (Change Data Capture via Debezium)</text>
+    <text x="750" y="36" class="card-tech">Events: ListingUpdated · DateRangeHeld · BookingCompleted · ReviewSubmitted</text>
+  </g>
+
+  <!-- Lines from Microservices to Kafka -->
+  <path d="M 177 440 L 177 480" class="conn-line" marker-end="url(#arrow)" />
+  <path d="M 442 440 L 442 480" class="conn-line" marker-end="url(#arrow)" />
+  <path d="M 707 440 L 707 480" class="conn-line" marker-end="url(#arrow)" />
+  <path d="M 972 440 L 972 480" class="conn-line" marker-end="url(#arrow)" />
+  <path d="M 1230 440 L 1230 480" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 4: STORAGE & DATABASE TIER ==================== -->
+  <text x="60" y="585" class="section-label">Layer 4: Multi-Model Polyglot Storage Tier</text>
+
+  <!-- Storage 1: PostgreSQL Aurora -->
+  <g transform="translate(60, 600)">
+    <rect width="235" height="135" rx="12" fill="url(#cardEdge)" stroke="#3B82F6" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#3B82F6" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🐘</text>
+    <text x="50" y="30" class="card-title">PostgreSQL Aurora</text>
+    <text x="50" y="44" class="card-tech">Multi-Region Relational</text>
+    <text x="14" y="70" class="card-body">Listing specs, amenities, host profiles</text>
+    <text x="14" y="90" class="card-body">ACID transactional integrity</text>
+    <text x="14" y="110" class="card-body">Partitioned by geographic country</text>
+  </g>
+
+  <!-- Storage 2: Redis Enterprise Bitmaps -->
+  <g transform="translate(325, 600)">
+    <rect width="235" height="135" rx="12" fill="url(#cardEdge)" stroke="#EF4444" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#EF4444" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">⚡</text>
+    <text x="50" y="30" class="card-title">Redis Enterprise</text>
+    <text x="50" y="44" class="card-tech">Bitmaps &amp; Redlock Cluster</text>
+    <text x="14" y="70" class="card-body">365-day availability bitfields</text>
+    <text x="14" y="90" class="card-body">GETBIT / BITFIELD in &lt; 0.5ms</text>
+    <text x="14" y="110" class="card-body">15-minute checkout TTL locks</text>
+  </g>
+
+  <!-- Storage 3: CockroachDB Distributed SQL -->
+  <g transform="translate(590, 600)">
+    <rect width="235" height="135" rx="12" fill="url(#cardEdge)" stroke="#10B981" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#10B981" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🪨</text>
+    <text x="50" y="30" class="card-title">CockroachDB / Spanner</text>
+    <text x="50" y="44" class="card-tech">Distributed Global SQL</text>
+    <text x="14" y="70" class="card-body">Confirmed reservations &amp; payments</text>
+    <text x="14" y="90" class="card-body">Serializable isolation level</text>
+    <text x="14" y="110" class="card-body">Multi-region consensus consensus</text>
+  </g>
+
+  <!-- Storage 4: Elasticsearch -->
+  <g transform="translate(855, 600)">
+    <rect width="235" height="135" rx="12" fill="url(#cardEdge)" stroke="#06B6D4" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#06B6D4" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">🔎</text>
+    <text x="50" y="30" class="card-title">Elasticsearch Cluster</text>
+    <text x="50" y="44" class="card-tech">Geo &amp; Inverted Index</text>
+    <text x="14" y="70" class="card-body">Uber H3 spatial index cells</text>
+    <text x="14" y="90" class="card-body">CDC streamed updates &lt; 100ms</text>
+    <text x="14" y="110" class="card-body">Sub-50ms map pan response</text>
+  </g>
+
+  <!-- Storage 5: AWS S3 Media CDN -->
+  <g transform="translate(1120, 600)">
+    <rect width="220" height="135" rx="12" fill="url(#cardEdge)" stroke="#F59E0B" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#F59E0B" fill-opacity="0.2" />
+    <text x="20" y="33" font-size="15">📦</text>
+    <text x="50" y="30" class="card-title">AWS S3 / Cloud Storage</text>
+    <text x="50" y="44" class="card-tech">Raw Object Storage</text>
+    <text x="14" y="70" class="card-body">24+ high-res room photos</text>
+    <text x="14" y="90" class="card-body">99.999999999% durability</text>
+    <text x="14" y="110" class="card-body">Automated AVIF transcoding</text>
+  </g>
+
+  <!-- Lines from Kafka to Storage -->
+  <path d="M 177 540 L 177 600" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 442 540 L 442 600" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 707 540 L 707 600" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 972 540 L 972 600" class="conn-solid" marker-end="url(#arrow)" />
+  <path d="M 1230 540 L 1230 600" class="conn-solid" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 5: INFRASTRUCTURE & OBSERVABILITY ==================== -->
+  <g transform="translate(60, 770)">
+    <rect width="1280" height="85" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1" />
+    <text x="24" y="30" class="card-title">Infrastructure, Deployment &amp; Observability Matrix</text>
+    <text x="24" y="52" class="card-body">• Multi-Cluster Kubernetes (EKS / GKE) with KEDA auto-scaling driven by HTTP request velocity and Kafka queue lag.</text>
+    <text x="24" y="70" class="card-body">• ArgoCD GitOps continuous deployment with automated canary analysis (5% → 25% → 100%) and instant rollback triggers.</text>
+    <text x="780" y="30" class="card-tech">Full-Stack Telemetry</text>
+    <text x="780" y="52" class="card-body">• Distributed Tracing: OpenTelemetry &amp; Jaeger</text>
+    <text x="780" y="70" class="card-body">• Metrics &amp; Logs: Prometheus + Grafana + Datadog</text>
+  </g>
+
+</svg>
